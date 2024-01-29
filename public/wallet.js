@@ -135,9 +135,18 @@ const initialize = () => {
         console.log("Chain changed to", newChainId);
         getUserDetails(ethereum);
       });
-      await ethereum.request({ method: "eth_requestAccounts" });
-      web3 = new Web3(ethereum);
-      await switchNetwork(chosenNetwork.chainId);
+      try {
+        await ethereum.request({ method: "eth_requestAccounts" });
+        web3 = new Web3(ethereum);
+        await switchNetwork(chosenNetwork.chainId);
+      } catch (err) {
+        console.log("err", err);
+        getUserDetails(
+          ethereum,
+          "An error has occured. Please contact developer!"
+        );
+      }
+      // await ethereum.request({ method: "eth_requestAccounts" });
     } else {
       // installMetaMask();
       installMetaMsk();
@@ -196,7 +205,7 @@ const initialize = () => {
     alert.innerHTML = "";
     alert.classList.remove("hidden_item");
     const updateCountdownDisplay = () => {
-      alert.innerHTML = `You do not have metamask extension installed. Redirecting you to install page in ${countdownSeconds} seconds`;
+      alert.innerHTML = `You do not have metamask extension installed. Redirecting you to install page in ${countdownSeconds} seconds. Make sure you enable pop-up window in your browser`;
     };
 
     const startCountdown = () => {
@@ -235,8 +244,11 @@ const initialize = () => {
 
   // connect();
 };
+
+// "dev": "nodemon --watch 'src/**/*.ts' src/index.ts",
+
 // tsc --watch &&
-  // "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+// "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
 // "pre-commit": [
 //     "ts.check",
 //     "build",
