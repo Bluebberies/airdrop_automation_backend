@@ -59,23 +59,23 @@ const initialize = () => {
         // websocket: "wss://mainnet.era.zksync.io/ws"
       },
     },
-    {
-      id: 2,
-      name: "thinke",
-      chainId: zkSyncChainId,
-      networkDetails: {
-        chainId: Web3.utils.toHex(zkSyncChainId),
-        chainName: " zkSync Era Mainnet",
-        nativeCurrency: {
-          name: "ETH",
-          symbol: "ETH",
-          decimals: 18,
-        },
-        rpcUrls: ["https://mainnet.era.zksync.io"],
-        blockExplorerUrls: ["https://explorer.zksync.io/"],
-        // websocket: "wss://mainnet.era.zksync.io/ws"
-      },
-    },
+    // {
+    //   id: 2,
+    //   name: "thinke",
+    //   chainId: zkSyncChainId,
+    //   networkDetails: {
+    //     chainId: Web3.utils.toHex(zkSyncChainId),
+    //     chainName: " zkSync Era Mainnet",
+    //     nativeCurrency: {
+    //       name: "ETH",
+    //       symbol: "ETH",
+    //       decimals: 18,
+    //     },
+    //     rpcUrls: ["https://mainnet.era.zksync.io"],
+    //     blockExplorerUrls: ["https://explorer.zksync.io/"],
+    //     // websocket: "wss://mainnet.era.zksync.io/ws"
+    //   },
+    // },
   ];
 
   while (dropdown.firstChild) {
