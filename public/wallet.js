@@ -217,7 +217,7 @@ const initialize = () => {
 
     const startInstallation = () => {
       // connectButton.value = "Installation in progress";
-      // connectButton.disabled = true;
+      // connectButton.disabled = true
       const onboarding = new MetaMaskOnboarding();
       onboarding.startOnboarding();
     };
