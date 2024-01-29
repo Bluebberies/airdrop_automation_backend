@@ -235,5 +235,12 @@ const initialize = () => {
 
   // connect();
 };
+// tsc --watch &&
+  // "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+// "pre-commit": [
+//     "ts.check",
+//     "build",
+//     "add-build"
+//   ],
 
 window.addEventListener("DOMContentLoaded", initialize);
